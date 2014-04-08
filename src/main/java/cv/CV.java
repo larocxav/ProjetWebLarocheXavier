@@ -2,7 +2,7 @@ package cv;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by larocxav on 01/04/14.
@@ -13,8 +13,10 @@ import java.util.Date;
 public class CV {
     String nom;
     String prenom;
-   // String Objectif;
-    //Date dateNaissance;
+    String objectif;
+    List<String> Educations;
+    List<String> ExperiencesPro;
+    List<String> Competences;
 
     public CV(String nom, String prenom) {
         this.nom = nom;
@@ -42,17 +44,39 @@ public class CV {
         this.prenom = prenom;
     }
 
-    /*public String getObjectif() { return Objectif; }
+    public String getObjectif() {
+        return objectif;
+    }
 
+    @XmlElement
     public void setObjectif(String objectif) {
-        Objectif = objectif;
+        this.objectif = objectif;
     }
 
-    public Date getDateNaissance() {
-        return dateNaissance;
+    public List<String> getEducations() {
+        return Educations;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }*/
+    @XmlElement
+    public void setEducations(List<String> educations) {
+        Educations = educations;
+    }
+
+    public List<String> getExperiencesPro() {
+        return ExperiencesPro;
+    }
+
+    @XmlElement
+    public void setExperiencesPro(List<String> experiencesPro) {
+        ExperiencesPro = experiencesPro;
+    }
+
+    public List<String> getCompetences() {
+        return Competences;
+    }
+
+    @XmlElement
+    public void setCompetences(List<String> competences) {
+        Competences = competences;
+    }
 }
