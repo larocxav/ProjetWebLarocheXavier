@@ -13,8 +13,8 @@ import java.util.Date;
 public class CV {
     String nom;
     String prenom;
-    String Objectif;
-    Date dateNaissance;
+   // String Objectif;
+    //Date dateNaissance;
 
     public CV(String nom, String prenom) {
         this.nom = nom;
@@ -42,7 +42,7 @@ public class CV {
         this.prenom = prenom;
     }
 
-    public String getObjectif() { return Objectif; }
+    /*public String getObjectif() { return Objectif; }
 
     public void setObjectif(String objectif) {
         Objectif = objectif;
@@ -54,5 +54,5 @@ public class CV {
 
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
-    }
+    }*/
 }
