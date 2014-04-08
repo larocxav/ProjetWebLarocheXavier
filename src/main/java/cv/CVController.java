@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/CV")
@@ -27,8 +28,9 @@ public class CVController {
         experiences.add("Portier");
         cv.setExperiencesPro(experiences);
 
-        ArrayList<String> educations = new ArrayList<String>();
-        educations.add("Université de harvard");
+        ArrayList<Education> educations = new ArrayList<Education>();
+        Education education = new Education(new Date(188),new Date(789),"Bac","ICI");
+        educations.add(education);
         cv.setEducations(educations);
 
         ArrayList<String> competences = new ArrayList<String>();
@@ -36,12 +38,6 @@ public class CVController {
         cv.setCompetences(competences);
 
         ArrayList<String> langues = new ArrayList<String>();
-        langues.add("Esperanto");
-        langues.add("Esperanto");
-        langues.add("Esperanto");
-        langues.add("Esperanto");
-        langues.add("Esperanto");
-        langues.add("Esperanto");
         langues.add("Esperanto");
         cv.setLangues(langues);
 

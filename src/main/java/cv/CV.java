@@ -14,7 +14,7 @@ public class CV {
     String nom;
     String prenom;
     String objectif;
-    List<String> educations;
+    List<Education> educations;
     List<String> experiencesPro;
     List<String> competences;
     List<String> langues;
@@ -54,12 +54,12 @@ public class CV {
         this.objectif = objectif;
     }
 
-    public List<String> getEducations() {
+    public List<Education> getEducations() {
         return educations;
     }
 
     @XmlElement
-    public void setEducations(List<String> educations) {
+    public void setEducations(List<Education> educations) {
         educations = educations;
     }
 
