@@ -32,6 +32,10 @@ public class CVController {
         competences.add("Aucune");
         cv.setCompetences(competences);
 
+        ArrayList<String> langues = new ArrayList<String>();
+        langues.add("Esperanto");
+        cv.setLangues(langues);
+
         return cv;
     }
 }

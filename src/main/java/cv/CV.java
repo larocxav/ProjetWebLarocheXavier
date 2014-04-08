@@ -14,9 +14,10 @@ public class CV {
     String nom;
     String prenom;
     String objectif;
-    List<String> Educations;
-    List<String> ExperiencesPro;
-    List<String> Competences;
+    List<String> educations;
+    List<String> experiencesPro;
+    List<String> competences;
+    List<String> langues;
 
     public CV(String nom, String prenom) {
         this.nom = nom;
@@ -54,29 +55,38 @@ public class CV {
     }
 
     public List<String> getEducations() {
-        return Educations;
+        return educations;
     }
 
     @XmlElement
     public void setEducations(List<String> educations) {
-        Educations = educations;
+        educations = educations;
     }
 
     public List<String> getExperiencesPro() {
-        return ExperiencesPro;
+        return experiencesPro;
     }
 
     @XmlElement
     public void setExperiencesPro(List<String> experiencesPro) {
-        ExperiencesPro = experiencesPro;
+        experiencesPro = experiencesPro;
     }
 
     public List<String> getCompetences() {
-        return Competences;
+        return competences;
+    }
+
+    public List<String> getLangues() {
+        return langues;
+    }
+
+    @XmlElement
+    public void setLangues(List<String> langues) {
+        this.langues = langues;
     }
 
     @XmlElement
     public void setCompetences(List<String> competences) {
-        Competences = competences;
+        competences = competences;
     }
 }
