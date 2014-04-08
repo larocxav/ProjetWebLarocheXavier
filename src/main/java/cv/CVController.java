@@ -14,8 +14,11 @@ import java.util.ArrayList;
 @RequestMapping("/CV")
 public class CVController {
 
-    @RequestMapping(value="{nom}", method = RequestMethod.GET)
-    public  @ResponseBody CV getCVInXML(@PathVariable String nom){
+    @RequestMapping(value = "{nom}", method = RequestMethod.GET)
+
+    public
+    @ResponseBody
+    CV getCVInXML(@PathVariable String nom) {
         CV cv = new CV(nom, "Arthur");
 
         cv.setObjectif("Maître du monde");
@@ -33,6 +36,12 @@ public class CVController {
         cv.setCompetences(competences);
 
         ArrayList<String> langues = new ArrayList<String>();
+        langues.add("Esperanto");
+        langues.add("Esperanto");
+        langues.add("Esperanto");
+        langues.add("Esperanto");
+        langues.add("Esperanto");
+        langues.add("Esperanto");
         langues.add("Esperanto");
         cv.setLangues(langues);
 
