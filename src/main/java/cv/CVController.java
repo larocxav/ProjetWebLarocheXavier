@@ -25,11 +25,11 @@ public class CVController {
         cv.setExperiencesPro(experiences);
 
         ArrayList<String> educations = new ArrayList<String>();
-        experiences.add("Université de harvard");
+        educations.add("Université de harvard");
         cv.setEducations(educations);
 
         ArrayList<String> competences = new ArrayList<String>();
-        experiences.add("Aucune");
+        competences.add("Aucune");
         cv.setCompetences(competences);
 
         return cv;
