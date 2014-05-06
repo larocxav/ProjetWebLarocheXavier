@@ -2,6 +2,11 @@ package cv;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Map;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -28,45 +33,35 @@ public class ActionGet extends AbstractAction {
     private JAXBContext jc;
 
     private static final QName qname = new QName("", "");
-    private static final String url = "http://projetweblarochexavier.solylok.cloudbees.net/CV/Bob";
+
 
     public ActionGet(InterfaceSwing interfaceSwing){
         super("get");
         this.interfaceSwing = interfaceSwing;
-        try {
-            jc = JAXBContext.newInstance(CV.class);
-        } catch (JAXBException je) {
-            System.out.println("Cannot create JAXBContext " + je);
-        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        service = Service.create(qname);
-        service.addPort(qname, HTTPBinding.HTTP_BINDING, url);
-        Dispatch<Source> dispatcher = service.createDispatch(qname,
-                Source.class, Service.Mode.MESSAGE);
-        Map<String, Object> requestContext = dispatcher.getRequestContext();
-        requestContext.put(MessageContext.HTTP_REQUEST_METHOD, "GET");
-
-        Source result = null;
+        String s ="";
         try {
-            result = dispatcher.invoke(new JAXBSource(jc, new CV()));
-        } catch (JAXBException e1) {
-            e1.printStackTrace();
-        }
+            final URL url = new URL("http://projetweblarochexavier.solylok.cloudbees.net/CV/");
+            URLConnection urlConnection = url.openConnection();
+            InputStream inputStream = urlConnection.getInputStream();
 
+
+            while(inputStream.available() != 0){
+                s += (char) inputStream.read();
+            }
+
+
+        } catch (MalformedURLException exc) {
+            exc.printStackTrace();
+        } catch (IOException exc) {
+            exc.printStackTrace();
+        }
+       interfaceSwing.getJTextArea().setText(s);
 
     }
 
-    public void printSource(Source s) {
-        try {
-            TransformerFactory factory = TransformerFactory.newInstance();
-            Transformer transformer = factory.newTransformer();
-            transformer.transform(s, new StreamResult(System.out));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
-    }
 }

@@ -10,33 +10,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/CV")
 public class CVController {
 
+    CV cv = new CV(1, "Guilmoto", "Arthur", "rien");
+    CV cv2 = new CV(2, "James", "Bob", "plein de trucs");
+    CV cv3 = new CV(3, "John", "Flint", "plein ");
     @RequestMapping(method = RequestMethod.GET)
 
     public
     @ResponseBody
-    CV getCVInXML() {
-        CV cv = new CV(1, "Guilmoto", "Arthur", "rien");
+    List<CV> getCVInXML() {
+        ArrayList<CV> cvs = new ArrayList<CV>();
+        cvs.add(cv);
+        cvs.add(cv2);
+        cvs.add(cv3):
 
-        cv.setObjectif("Rien");
-
-        ArrayList<String> experiences = new ArrayList<String>();
-        experiences.add("Portier");
-
-        ArrayList<String> competences = new ArrayList<String>();
-        competences.add("Aucune");
-        cv.setCompetences(competences);
-
-        ArrayList<String> langues = new ArrayList<String>();
-        langues.add("Esperanto");
-        langues.add("Français");
-        cv.setLangues(langues);
-
-        return cv;
+        return cvs;
     }
 }
 
