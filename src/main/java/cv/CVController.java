@@ -36,7 +36,7 @@ public class CVController {
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public
     @ResponseBody
-    CV getCVById(@PathVariable int id){
+    CV getCVInXML(@PathVariable int id){
 
         ResumeList resumeList = new ResumeList();
         resumeList.cv.add(cv);
