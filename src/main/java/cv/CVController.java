@@ -15,12 +15,12 @@ import java.util.Date;
 @RequestMapping("/CV")
 public class CVController {
 
-    @RequestMapping(value = "{nom}", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
 
     public
     @ResponseBody
-    CV getCVInXML(@PathVariable String nom) {
-        CV cv = new CV(nom, "Arthur");
+    CV getCVInXML() {
+        CV cv = new CV(1, "Guilmoto", "Arthur");
 
         cv.setObjectif("Rien");
 

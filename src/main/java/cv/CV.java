@@ -11,6 +11,7 @@ import java.util.List;
 @XmlRootElement(name = "cv")
 
 public class CV {
+    int id;
     String nom;
     String prenom;
     String objectif;
@@ -19,12 +20,22 @@ public class CV {
     List<String> competences;
     List<String> langues;
 
-    public CV(String nom, String prenom) {
+    public CV(int id,String nom, String prenom) {
+        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
     }
 
     public CV() {
+    }
+
+    @XmlElement
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNom() {
