@@ -22,7 +22,7 @@ public class CVController {
     CV getCVInXML(@PathVariable String nom) {
         CV cv = new CV(nom, "Arthur");
 
-        cv.setObjectif("Maître du monde");
+        cv.setObjectif("Rien");
 
         ArrayList<String> experiences = new ArrayList<String>();
         experiences.add("Portier");
