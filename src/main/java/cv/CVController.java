@@ -24,13 +24,13 @@ public class CVController {
     @RequestMapping(method = RequestMethod.GET)
     public
     @ResponseBody
-    CV getCVInXML() {
-        ArrayList<CV> cvs = new ArrayList<CV>();
-        cvs.add(cv);
-        cvs.add(cv2);
-        cvs.add(cv3);
+    ResumeList getCVInXML() {
+        ResumeList resumeList = new ResumeList();
+        resumeList.cv.add(cv);
+        resumeList.cv.add(cv2);
+        resumeList.cv.add(cv3);
 
-        return cv;
+        return resumeList;
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
@@ -38,12 +38,12 @@ public class CVController {
     @ResponseBody
     CV getCVById(@PathVariable int id){
 
-        ArrayList<CV> cvs = new ArrayList<CV>();
-        cvs.add(cv);
-        cvs.add(cv2);
-        cvs.add(cv3);
+        ResumeList resumeList = new ResumeList();
+        resumeList.cv.add(cv);
+        resumeList.cv.add(cv2);
+        resumeList.cv.add(cv3);
 
-        return cvs.get(id);
+        return resumeList.cv.get(id);
     }
 }
 
