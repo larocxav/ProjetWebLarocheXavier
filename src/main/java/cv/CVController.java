@@ -31,6 +31,11 @@ public class CVController {
     public
     @ResponseBody
     List<CV> getCVInXML() {
+
+        cvs.add(cv);
+        cvs.add(cv2);
+        cvs.add(cv3);
+
         return cvs;
     }
 
