@@ -10,6 +10,14 @@ import java.util.List;
 @XmlRootElement(name="cv")
 public class ResumeList {
 
-    List<CV> cv = new ArrayList<CV>();
+    private List<CV> cv = new ArrayList<CV>();
+
+    public List<CV> getCv(){
+        return cv;
+    }
+
+    public void setCv(List<CV> cv){
+        this.cv = cv;
+    }
 
 }

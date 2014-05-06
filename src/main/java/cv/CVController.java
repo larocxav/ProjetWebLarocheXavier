@@ -25,10 +25,11 @@ public class CVController {
     public
     @ResponseBody
     ResumeList getCVInXML() {
+
         ResumeList resumeList = new ResumeList();
-        resumeList.cv.add(cv);
-        resumeList.cv.add(cv2);
-        resumeList.cv.add(cv3);
+        resumeList.getCv().add(cv);
+        resumeList.getCv().add(cv2);
+        resumeList.getCv().add(cv3);
 
         return resumeList;
     }
@@ -39,11 +40,11 @@ public class CVController {
     CV getCVInXML(@PathVariable int id){
 
         ResumeList resumeList = new ResumeList();
-        resumeList.cv.add(cv);
-        resumeList.cv.add(cv2);
-        resumeList.cv.add(cv3);
+        resumeList.getCv().add(cv);
+        resumeList.getCv().add(cv2);
+        resumeList.getCv().add(cv3);
 
-        return resumeList.cv.get(id);
+        return resumeList.getCv().get(id-1);
     }
 }
 
