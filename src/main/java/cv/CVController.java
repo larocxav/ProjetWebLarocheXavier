@@ -26,12 +26,6 @@ public class CVController {
 
         ArrayList<String> experiences = new ArrayList<String>();
         experiences.add("Portier");
-        cv.setExperiencesPro(experiences);
-
-        ArrayList<Education> educations = new ArrayList<Education>();
-        Education education = new Education(new Date(188),new Date(789),"Bac","ICI");
-        educations.add(education);
-        cv.setEducations(educations);
 
         ArrayList<String> competences = new ArrayList<String>();
         competences.add("Aucune");
