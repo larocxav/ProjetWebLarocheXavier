@@ -20,7 +20,7 @@ public class CVController {
     public
     @ResponseBody
     CV getCVInXML() {
-        CV cv = new CV(1, "Guilmoto", "Arthur");
+        CV cv = new CV(1, "Guilmoto", "Arthur", "rien");
 
         cv.setObjectif("Rien");
 
@@ -39,6 +39,7 @@ public class CVController {
 
         ArrayList<String> langues = new ArrayList<String>();
         langues.add("Esperanto");
+        langues.add("Français");
         cv.setLangues(langues);
 
         return cv;

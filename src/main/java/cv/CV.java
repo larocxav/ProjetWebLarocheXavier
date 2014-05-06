@@ -15,15 +15,15 @@ public class CV {
     String nom;
     String prenom;
     String objectif;
-    List<Education> educations;
-    List<String> experiencesPro;
+    List<String> educations;
     List<String> competences;
     List<String> langues;
 
-    public CV(int id,String nom, String prenom) {
+    public CV(int id,String nom, String prenom, String objectif) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
+        this.objectif = objectif;
     }
 
     public CV() {
@@ -38,17 +38,13 @@ public class CV {
         return id;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
     @XmlElement
     public void setNom(String prenom) {
         this.nom = prenom;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getNom() {
+        return nom;
     }
 
     @XmlElement
@@ -56,8 +52,8 @@ public class CV {
         this.prenom = prenom;
     }
 
-    public String getObjectif() {
-        return objectif;
+    public String getPrenom() {
+        return prenom;
     }
 
     @XmlElement
@@ -65,30 +61,17 @@ public class CV {
         this.objectif = objectif;
     }
 
-    public List<Education> getEducations() {
-        return educations;
+    public String getObjectif() {
+        return objectif;
     }
 
     @XmlElement
-    public void setEducations(List<Education> educations) {
+    public void setEducations(List<String> educations) {
         educations = educations;
     }
 
-    public List<String> getExperiencesPro() {
-        return experiencesPro;
-    }
-
-    @XmlElement
-    public void setExperiencesPro(List<String> experiencesPro) {
-        experiencesPro = experiencesPro;
-    }
-
-    public List<String> getCompetences() {
-        return competences;
-    }
-
-    public List<String> getLangues() {
-        return langues;
+    public List<String> getEducations() {
+        return educations;
     }
 
     @XmlElement
@@ -96,8 +79,16 @@ public class CV {
         this.langues = langues;
     }
 
+    public List<String> getLangues() {
+        return langues;
+    }
+
     @XmlElement
     public void setCompetences(List<String> competences) {
         competences = competences;
+    }
+
+    public List<String> getCompetences() {
+        return competences;
     }
 }
