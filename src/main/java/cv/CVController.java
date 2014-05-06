@@ -24,13 +24,13 @@ public class CVController {
     @RequestMapping(method = RequestMethod.GET)
     public
     @ResponseBody
-    List<CV> getCVInXML() {
+    CV getCVInXML() {
         ArrayList<CV> cvs = new ArrayList<CV>();
         cvs.add(cv);
         cvs.add(cv2);
         cvs.add(cv3);
 
-        return cvs;
+        return cv;
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
